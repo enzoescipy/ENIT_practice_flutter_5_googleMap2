@@ -1,16 +1,16 @@
-import 'package:enitproject/app/screen/map_home/binding/home_binding.dart';
-import 'package:enitproject/app/screen/map_home/view/home_view.dart';
-import 'package:enitproject/app/screen/preview/bindings/preview_binding.dart';
-import 'package:enitproject/app/screen/preview/view/preview_screen.dart';
-import 'package:enitproject/app/screen/root/bindings/root_binding.dart';
-import 'package:enitproject/app/screen/root/view/root_screen.dart';
+import 'package:enitproject/app/screen/Tab/children/Map/binding/map_binding.dart';
+import 'package:enitproject/app/screen/Tab/children/Map/view/map_view.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/bindings/preview_binding.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/view/preview_view.dart';
+import 'package:enitproject/app/screen/Root/bindings/root_binding.dart';
+import 'package:enitproject/app/screen/Root/view/root_screen.dart';
 
-import 'package:enitproject/app/screen/tab/binding/tabs_binding.dart';
-import 'package:enitproject/app/screen/tab/view/tabs_screen.dart';
+import 'package:enitproject/app/screen/Tab/binding/tabs_binding.dart';
+import 'package:enitproject/app/screen/Tab/view/tabs_screen.dart';
 import 'package:get/get.dart';
 
-import 'package:enitproject/app/screen/create_story/view/create_story_view.dart';
-import 'package:enitproject/app/screen/create_story/binding/create_story_binding.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/children/CreateStory/view/create_story_view.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/children/CreateStory/binding/create_story_binding.dart';
 
 
 part 'app_routes.dart';

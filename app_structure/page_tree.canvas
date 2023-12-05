@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"b03f7534392cfcb1","type":"text","text":"로그인을 한 적이 있고, 로그아웃을 아직 하지 않았는가?","x":-960,"y":420,"width":275,"height":80},
+		{"id":"20fffec1191478a4","type":"text","text":"Navigation bar Items","x":-600,"y":510,"width":250,"height":60},
+		{"id":"48ae35711e1eb215","type":"file","file":"pages/Login.md","x":-600,"y":80,"width":260,"height":276},
+		{"id":"c10449bc6e143fe1","type":"file","file":"pages/Preview.md","x":-240,"y":920,"width":240,"height":320},
+		{"id":"755392dc01529938","type":"text","text":"corresponding Item / Marker has pushed","x":117,"y":890,"width":250,"height":60},
+		{"id":"c39754924656833d","type":"file","file":"pages/Detail.md","x":480,"y":750,"width":400,"height":400},
+		{"id":"56fbabf1bc9dd06f","type":"file","file":"pages/My.md","x":10,"y":267,"width":357,"height":273},
+		{"id":"4ce0414e79b086c9","type":"file","file":"pages/Home.md","x":-180,"y":570,"width":240,"height":270},
+		{"id":"f282425823a475d9","type":"text","text":"Logout or withdraw","x":492,"y":310,"width":250,"height":60},
+		{"id":"722d8b97b4a5e9af","type":"file","file":"pages/Delete.md","x":-200,"y":1360,"width":200,"height":200},
+		{"id":"7e4d6471fdf42418","type":"file","file":"pages/Create.md","x":-400,"y":1360,"width":200,"height":200},
+		{"id":"5933d8eb3d9dc295","type":"file","file":"pages/Update.md","x":0,"y":1360,"width":200,"height":200},
+		{"id":"19b5cb33f1436f52","x":-670,"y":-440,"width":400,"height":400,"type":"file","file":"pages/Join.md"}
+	],
+	"edges":[
+		{"id":"c9ec1b883c2bf544","fromNode":"b03f7534392cfcb1","fromSide":"right","toNode":"48ae35711e1eb215","toSide":"left","label":"NO"},
+		{"id":"bf8f47005d88e482","fromNode":"b03f7534392cfcb1","fromSide":"right","toNode":"20fffec1191478a4","toSide":"left","label":"YES"},
+		{"id":"a6ce6d54028863a6","fromNode":"20fffec1191478a4","fromSide":"right","toNode":"4ce0414e79b086c9","toSide":"left","color":"5"},
+		{"id":"2a9132387b49b0a1","fromNode":"20fffec1191478a4","fromSide":"right","toNode":"c10449bc6e143fe1","toSide":"left","color":"5"},
+		{"id":"42068542277af1c9","fromNode":"20fffec1191478a4","fromSide":"right","toNode":"56fbabf1bc9dd06f","toSide":"left","color":"5"},
+		{"id":"b8a9020c6dbddfcb","fromNode":"4ce0414e79b086c9","fromSide":"right","toNode":"755392dc01529938","toSide":"left"},
+		{"id":"8f5b37c94ebe6e4b","fromNode":"c10449bc6e143fe1","fromSide":"right","toNode":"755392dc01529938","toSide":"left"},
+		{"id":"080607cdcf5d1854","fromNode":"755392dc01529938","fromSide":"right","toNode":"c39754924656833d","toSide":"left"},
+		{"id":"4bb9e3f688322844","fromNode":"56fbabf1bc9dd06f","fromSide":"right","toNode":"f282425823a475d9","toSide":"left"},
+		{"id":"a9a7c58d0d794b60","fromNode":"f282425823a475d9","fromSide":"top","toNode":"48ae35711e1eb215","toSide":"right"},
+		{"id":"af2309d185ea59ab","fromNode":"c10449bc6e143fe1","fromSide":"bottom","toNode":"7e4d6471fdf42418","toSide":"top","color":"5"},
+		{"id":"545a9b236c67599f","fromNode":"c10449bc6e143fe1","fromSide":"bottom","toNode":"722d8b97b4a5e9af","toSide":"top","color":"5"},
+		{"id":"bc2d375214c6687d","fromNode":"c10449bc6e143fe1","fromSide":"bottom","toNode":"5933d8eb3d9dc295","toSide":"top","color":"5"},
+		{"id":"15e2b90bb2bf6977","fromNode":"48ae35711e1eb215","fromSide":"top","toNode":"19b5cb33f1436f52","toSide":"bottom","color":"5"}
+	]
+}

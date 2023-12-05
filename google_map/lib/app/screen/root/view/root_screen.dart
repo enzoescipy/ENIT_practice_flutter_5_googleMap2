@@ -1,5 +1,5 @@
 import 'package:enitproject/app/routes/app_pages.dart';
-import 'package:enitproject/app/screen/root/controller/root_controller.dart';
+import 'package:enitproject/app/screen/Root/controller/root_controller.dart';
 import 'package:enitproject/app/screen/splash_screen.dart';
 
 import 'package:flutter/material.dart';
