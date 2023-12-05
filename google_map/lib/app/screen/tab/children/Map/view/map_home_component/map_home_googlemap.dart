@@ -1,4 +1,4 @@
-import 'package:enitproject/app/screen/tab/children/map/controller/map_controller.dart';
+import 'package:enitproject/app/screen/Tab/children/Map/controller/map_controller.dart';
 import 'package:enitproject/service/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';

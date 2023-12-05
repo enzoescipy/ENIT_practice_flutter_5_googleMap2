@@ -1,12 +1,12 @@
 import 'package:enitproject/app/screen/Tab/children/Map/binding/map_binding.dart';
 import 'package:enitproject/app/screen/Tab/children/Map/view/map_view.dart';
-import 'package:enitproject/app/screen/Tab/children/Preview/bindings/preview_binding.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/binding/preview_binding.dart';
 import 'package:enitproject/app/screen/Tab/children/Preview/view/preview_view.dart';
-import 'package:enitproject/app/screen/Root/bindings/root_binding.dart';
+import 'package:enitproject/app/screen/Root/binding/root_binding.dart';
 import 'package:enitproject/app/screen/Root/view/root_screen.dart';
 
 import 'package:enitproject/app/screen/Tab/binding/tabs_binding.dart';
-import 'package:enitproject/app/screen/Tab/view/tabs_screen.dart';
+import 'package:enitproject/app/screen/Tab/view/tabs_view.dart';
 import 'package:get/get.dart';
 
 import 'package:enitproject/app/screen/Tab/children/Preview/children/CreateStory/view/create_story_view.dart';

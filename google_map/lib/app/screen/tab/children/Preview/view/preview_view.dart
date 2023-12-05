@@ -1,4 +1,4 @@
-import 'package:enitproject/app/screen/tab/children/preview/controller/preview_controller.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/controller/preview_controller.dart';
 import 'package:enitproject/service/location_service.dart';
 import 'package:enitproject/const/color.dart';
 import 'package:flutter/material.dart';

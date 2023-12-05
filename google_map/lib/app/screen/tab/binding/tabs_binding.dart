@@ -1,5 +1,5 @@
 
-import 'package:enitproject/app/screen/Tab/children/map/controller/map_controller.dart';
+import 'package:enitproject/app/screen/Tab/children/Map/controller/map_controller.dart';
 import 'package:enitproject/app/screen/Tab/controller/tabs_controller.dart';
 import 'package:get/get.dart';
 

@@ -1,4 +1,4 @@
-import 'package:enitproject/app/screen/Tab/children/preview/children/UpdateStory/controller/update_story_controller.dart';
+import 'package:enitproject/app/screen/Tab/children/Preview/children/UpdateStory/controller/update_story_controller.dart';
 import 'package:get/get.dart';
 import 'dart:developer';
 
