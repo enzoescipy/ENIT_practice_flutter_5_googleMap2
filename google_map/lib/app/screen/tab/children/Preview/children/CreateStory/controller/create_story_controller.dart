@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'package:enitproject/repository/storylist_network_repository.dart';
 import 'package:enitproject/model/storylist_model.dart';
-
+import 'package:enitproject/package/debug_console.dart';
 import 'package:enitproject/const/const.dart';
 
 import 'package:enitproject/service/location_service.dart';
@@ -42,7 +40,7 @@ class CreateStoryController extends GetxController {
       return MapEntry(key, value.text);
     });
 
-    log(storyListMap.toString());
+    debugConsole(storyListMap);
 
     if (emptyCount == 0 && isCreated) {
       final model = StoryListModel.fromMap(storyListMap);
@@ -51,7 +49,7 @@ class CreateStoryController extends GetxController {
       model.isLike = false;
 
       await storyListNetworkRepository.createStoryModel(model);
-      
+
       LocationService.to.storyList.add(model);
     }
 

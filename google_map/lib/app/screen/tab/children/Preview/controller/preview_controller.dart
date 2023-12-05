@@ -1,15 +1,11 @@
-
+import 'package:enitproject/package/debug_console.dart';
 import 'package:enitproject/service/location_service.dart';
 import 'package:enitproject/model/storylist_model.dart';
 import 'package:enitproject/repository/storylist_network_repository.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 
-import 'dart:developer';
-
-class PreviewController extends GetxController{
-
+class PreviewController extends GetxController {
   //싱글톤처럼 쓰기위함
   static PreviewController get to => Get.find();
 
@@ -17,10 +13,10 @@ class PreviewController extends GetxController{
   RxList<StoryListModel> previewStoryList = RxList<StoryListModel>();
 
   @override
-  void onInit() async{
+  void onInit() async {
     await storyListNetworkRepository.getStoryListModel().then((value) => {
-      previewStoryList(value),
-    });
+          previewStoryList(value),
+        });
     super.onInit();
   }
 
@@ -28,20 +24,18 @@ class PreviewController extends GetxController{
     EasyLoading.show();
     // grab the current storylistmodel.
     final targetPkey = LocationService.to.storyList[index].pkey;
-    log(index.toString());
-    log(LocationService.to.storyList.map((e) => e.pkey).toList().toString());
-    log(targetPkey.toString());
+    debugConsole(index);
+    debugConsole(LocationService.to.storyList.map((e) => e.pkey).toList());
+    debugConsole(targetPkey);
     if (targetPkey == null) {
       return;
     }
 
-    log(targetPkey.toString());    
+    debugConsole(targetPkey);
 
     await storyListNetworkRepository.deleteStoryModel(targetPkey);
     LocationService.to.storyList.removeWhere((element) => element.pkey == targetPkey);
 
     EasyLoading.dismiss();
   }
-
-
 }

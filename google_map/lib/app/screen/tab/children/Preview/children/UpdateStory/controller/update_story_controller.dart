@@ -1,12 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'dart:async';
 import 'package:enitproject/repository/storylist_network_repository.dart';
 import 'package:enitproject/model/storylist_model.dart';
-
+import 'package:enitproject/package/debug_console.dart';
 import 'package:enitproject/const/const.dart';
 
 import 'package:enitproject/service/location_service.dart';
@@ -55,7 +53,7 @@ class UpdateStoryController extends GetxController {
       storyMap[key] = value;
     });
 
-    log(storyMap.toString());
+    debugConsole(storyMap);
 
     if (emptyCount == 0 && isUpdated) {
       final model = StoryListModel.fromMap(storyMap);

@@ -11,11 +11,13 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
+import 'package:enitproject/package/debug_console.dart';
+
 Future<void> main() async {
   ///파이어베이스 연동
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-
+  enableDebug();
   runApp(
     GetMaterialApp.router(
       initialBinding: BindingsBuilder(

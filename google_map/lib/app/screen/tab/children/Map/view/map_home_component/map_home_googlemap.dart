@@ -21,13 +21,13 @@ class CustomGoogleMap extends GetView<MapHomeController> {
         final storyModel = storyList[i];
         markers.add(Marker(
           //add first marker
-          markerId: MarkerId(storyModel.storyPlayListKey ?? '123'),
+          markerId: MarkerId(i.toString()),
           position: LatLng(storyModel.latitude ?? 0.0, storyModel.longitude ?? 0.0), //
           infoWindow: InfoWindow(
               //popup info
               title: storyModel.title,
               onTap: () {
-                Get.to(() => LocationView(
+                Get.to(() => DetailStoryView(
                       storyIndex: i,
                     ));
               } // 타이틀만 보여 줄꺼면 잘보이게 꾸미기 필요

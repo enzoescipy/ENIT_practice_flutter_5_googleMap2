@@ -1,10 +1,8 @@
 import 'package:enitproject/app/screen/Tab/children/Preview/children/UpdateStory/controller/update_story_controller.dart';
-import 'package:enitproject/service/location_service.dart';
-import 'package:enitproject/model/storylist_model.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:enitproject/const/const.dart';
-import 'dart:developer';
+import 'package:enitproject/package/debug_console.dart';
 
 class UpdateStoryView extends GetView<UpdateStoryController> {
   const UpdateStoryView({Key? key}) : super(key: key);
@@ -58,7 +56,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewNameField() {
-    log("11");
+    debugConsole("11");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -74,7 +72,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewLatitudeField() {
-    log("12");
+    debugConsole("12");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -90,7 +88,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewLongitudeField() {
-    log("13");
+    debugConsole("13");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -106,7 +104,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewImageField() {
-    log("14");
+    debugConsole("14");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -122,7 +120,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewAddressField() {
-    log("15");
+    debugConsole("15");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -138,7 +136,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewScriptField() {
-    log("16");
+    debugConsole("16");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [

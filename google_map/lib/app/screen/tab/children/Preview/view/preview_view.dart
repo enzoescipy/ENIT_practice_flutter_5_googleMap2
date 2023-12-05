@@ -165,11 +165,9 @@ class PreviewScreen extends GetView<PreviewController> {
                         ),
                       ),
                       onTap: () {
-                        if (LocationService.to.storyList[index].storyPlayListKey != null) {
-                          Get.to(() => LocationView(
-                                storyIndex: index,
-                              ));
-                        }
+                        Get.to(() => DetailStoryView(
+                              storyIndex: index,
+                            ));
                       },
                     );
                   })),
