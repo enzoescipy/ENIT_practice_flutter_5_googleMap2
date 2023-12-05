@@ -157,7 +157,26 @@ class PreviewScreen extends GetView<PreviewController> {
                                 color: Colors.black,
                                 iconSize: 35.0,
                                 onPressed: () {
-                                  controller.fireBaseDelete(index);
+                                  showDialog(
+                                      context: context,
+                                      builder: (context) {
+                                        return AlertDialog(
+                                          title: const Text("정말 삭제하시겠습니까?"),
+                                          actions: [
+                                            MaterialButton(
+                                                child: const Text("Yes"),
+                                                onPressed: () {
+                                                  controller.fireBaseDelete(index);
+                                                  Navigator.pop(context);
+                                                }),
+                                            MaterialButton(
+                                                child: const Text("No"),
+                                                onPressed: () {
+                                                  Navigator.pop(context);
+                                                })
+                                          ],
+                                        );
+                                      });
                                 },
                               )
                             ],
