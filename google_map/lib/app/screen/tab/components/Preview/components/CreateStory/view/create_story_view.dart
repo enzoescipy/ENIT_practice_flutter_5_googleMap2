@@ -1,11 +1,10 @@
-import 'package:enitproject/app/screen/Tab/children/Preview/children/UpdateStory/controller/update_story_controller.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/components/CreateStory/controller/create_story_controller.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:enitproject/const/const.dart';
-import 'package:enitproject/package/debug_console.dart';
 
-class UpdateStoryView extends GetView<UpdateStoryController> {
-  const UpdateStoryView({Key? key}) : super(key: key);
+class CreateStoryView extends GetView<CreateStoryController> {
+  const CreateStoryView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +16,7 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
             elevation: 0.0,
             centerTitle: true,
             title: const Text(
-              '마커 수정',
+              '마커 생성',
               style: TextStyle(color: Colors.black),
             ),
             leading: Padding(
@@ -56,7 +55,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewNameField() {
-    debugConsole("11");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -72,7 +70,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewLatitudeField() {
-    debugConsole("12");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -88,7 +85,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewLongitudeField() {
-    debugConsole("13");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -104,7 +100,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewImageField() {
-    debugConsole("14");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -120,7 +115,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewAddressField() {
-    debugConsole("15");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -136,7 +130,6 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
   }
 
   Widget ListViewScriptField() {
-    debugConsole("16");
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -156,8 +149,8 @@ class UpdateStoryView extends GetView<UpdateStoryController> {
       child: IconButton(
         icon: Icon(Icons.send),
         onPressed: (() async {
-          controller.isUpdated = true;
-          await controller.fireBaseUpdate();
+          controller.isCreated = true;
+          await controller.fireBaseCreate();
           Get.back();
         }),
       ),

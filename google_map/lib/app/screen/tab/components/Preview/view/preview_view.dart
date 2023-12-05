@@ -1,15 +1,15 @@
-import 'package:enitproject/app/screen/Tab/children/Preview/controller/preview_controller.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/controller/preview_controller.dart';
 import 'package:enitproject/service/location_service.dart';
 import 'package:enitproject/const/color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import 'package:enitproject/app/screen/Detail/view/detail_view.dart';
-import 'package:enitproject/app/screen/Tab/children/Preview/children/CreateStory/view/create_story_view.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/components/CreateStory/view/create_story_view.dart';
 
-import 'package:enitproject/app/screen/Tab/children/Preview/children/CreateStory/binding/create_story_binding.dart';
-import 'package:enitproject/app/screen/Tab/children/Preview/children/UpdateStory/binding/update_story_binding.dart';
-import 'package:enitproject/app/screen/Tab/children/Preview/children/UpdateStory/view/update_story_view.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/components/CreateStory/binding/create_story_binding.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/components/UpdateStory/binding/update_story_binding.dart';
+import 'package:enitproject/app/screen/Tab/components/Preview/components/UpdateStory/view/update_story_view.dart';
 
 class PreviewScreen extends GetView<PreviewController> {
   const PreviewScreen({Key? key}) : super(key: key);

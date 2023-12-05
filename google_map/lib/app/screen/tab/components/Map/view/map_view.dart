@@ -1,5 +1,5 @@
-import 'package:enitproject/app/screen/Tab/children/Map/controller/map_controller.dart';
-import 'package:enitproject/app/screen/Tab/children/Map/view/map_home_component/map_home_googlemap.dart';
+import 'package:enitproject/app/screen/Tab/components/Map/controller/map_controller.dart';
+import 'package:enitproject/app/screen/Tab/components/Map/view/map_home_component/map_home_googlemap.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
@@ -32,8 +32,7 @@ class HomeView extends GetView<MapHomeController> {
                 return Stack(
                   children: [
                     ///구글맵
-                    CustomGoogleMap(
-                        onMapCreated: controller.onMapCreated),
+                    CustomGoogleMap(onMapCreated: controller.onMapCreated),
                   ],
                 );
               })

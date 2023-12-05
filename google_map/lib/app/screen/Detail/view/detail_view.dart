@@ -1,5 +1,5 @@
 import 'package:enitproject/app/routes/app_pages.dart';
-import 'package:enitproject/app/screen/Tab/children/Map/controller/map_controller.dart';
+import 'package:enitproject/app/screen/Tab/components/Map/controller/map_controller.dart';
 import 'package:enitproject/model/storylist_model.dart';
 import 'package:enitproject/package/debug_console.dart';
 import 'package:enitproject/service/location_service.dart';
