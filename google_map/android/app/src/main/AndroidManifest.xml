@@ -8,7 +8,7 @@
         android:icon="@mipmap/ic_launcher">
         
         <meta-data android:name="com.google.android.geo.API_KEY"
-        android:value="AIzaSyD2BZhhRXiBjGswuHHSrAU0gSVyZMHwsWs"/>
+        android:value="google_api_public_key_inject_flutter_android_manifest_xml"/>
 
         <activity
             android:name=".MainActivity"
