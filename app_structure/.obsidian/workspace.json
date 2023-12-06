@@ -15,14 +15,27 @@
               "state": {
                 "file": "page_tree.canvas",
                 "viewState": {
-                  "x": 237.9709869507364,
-                  "y": 106.44615878941894,
-                  "zoom": -1.25
+                  "x": -470,
+                  "y": 218,
+                  "zoom": 0
                 }
               }
             }
+          },
+          {
+            "id": "5acf0f203ef3531d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "pages/Login.md",
+                "mode": "source",
+                "source": false
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -88,7 +101,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "page_tree.canvas",
+                "file": "pages/Login.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,7 +118,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "page_tree.canvas",
+                "file": "pages/Login.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -128,7 +141,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "page_tree.canvas"
+                "file": "pages/Login.md"
               }
             }
           }
@@ -149,12 +162,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "00eb082dfa199527",
+  "active": "5acf0f203ef3531d",
   "lastOpenFiles": [
-    "pics/Pasted image 20231205111628.png",
     "page_tree.canvas",
-    "pages/Join.md",
     "pages/Login.md",
+    "pics/Pasted image 20231205111628.png",
+    "pages/Join.md",
     "pages/Login/Join",
     "pages/Detail.md",
     "pages/Delete.md",

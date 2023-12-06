@@ -1,9 +1,12 @@
+import 'package:enitproject/app/screen/Login/view/login_view.dart';
 import 'package:enitproject/app/screen/Tab/components/Map/binding/map_binding.dart';
 import 'package:enitproject/app/screen/Tab/components/Map/view/map_view.dart';
 import 'package:enitproject/app/screen/Tab/components/Preview/binding/preview_binding.dart';
 import 'package:enitproject/app/screen/Tab/components/Preview/view/preview_view.dart';
 import 'package:enitproject/app/screen/Root/binding/root_binding.dart';
 import 'package:enitproject/app/screen/Root/view/root_screen.dart';
+import 'package:enitproject/app/screen/Login/binding/login_binding.dart';
+import 'package:enitproject/app/screen/Login/controller/login_controller.dart';
 
 import 'package:enitproject/app/screen/Tab/binding/tabs_binding.dart';
 import 'package:enitproject/app/screen/Tab/view/tabs_view.dart';
@@ -25,6 +28,12 @@ class AppPages {
       participatesInRootNavigator: true,
       preventDuplicates: true,
       children: [
+        GetPage(
+          preventDuplicates: true,
+          name: _Paths.LOGIN,
+          page: () => const LoginView(),
+          binding: LoginBinding()
+        ),
         GetPage(
           preventDuplicates: true,
           name: _Paths.TAB,

@@ -20,7 +20,7 @@ class RootView extends GetView<RootController> {
               if(snapshot.connectionState == ConnectionState.done){
                 return Scaffold(
                   body: GetRouterOutlet(
-                    initialRoute: Routes.TAB
+                    initialRoute: Routes.LOGIN
                   ),
                 );
               }

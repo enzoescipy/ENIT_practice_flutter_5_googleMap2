@@ -1,4 +1,9 @@
-const COLLECTION_STORYPLAYLIST = 'storyPlayList';
+const COLLECTION_STORYPLAYLIST_depracated = 'storyPlayList';
+const COLLECTION_STORYLIST = 'storyList';
+const COLLECTION_USERS = 'users';
+
+const KEY_UID = 'uid';
+
 const KEY_ADDRESS_DETAIL = 'address_detail';
 const KEY_ADDRESS_SEARCH = 'address_search';
 const KEY_IMAGE = 'image';
