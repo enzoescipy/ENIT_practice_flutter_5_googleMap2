@@ -1,5 +1,7 @@
 import 'package:enitproject/app/screen/Tab/binding/tabs_binding.dart';
+import 'package:enitproject/model/user_preference_model.dart';
 import 'package:enitproject/package/debug_console.dart';
+import 'package:enitproject/repository/storylist_network_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
@@ -14,6 +16,17 @@ class LoginController extends GetxController {
   final idTextControl = TextEditingController();
   final pwTextControl = TextEditingController();
 
+  @override
+  void onInit() {
+    if (AuthService.to.getCurrentUser() != null) {
+      Get.rootDelegate.offAndToNamed(Routes.HOME);
+    }
+    // storyListNetworkRepository.getUserPreference(); // debug
+    // storyListNetworkRepository.updateUserPreference("아직모른다"); // debug
+    // storyListNetworkRepository.createUser(UserPrefModel(null, null, "testNickNAme일지도")); // debug
+    super.onInit();
+  }
+
   Future<void> FireAuthLogin() async {
     EasyLoading.show();
 
@@ -26,7 +39,6 @@ class LoginController extends GetxController {
       if (loginStatus == LoginStatus.succes) {
         EasyLoading.dismiss();
         Get.rootDelegate.offAndToNamed(Routes.HOME);
-        // Get.offAndToNamed(Routes.HOME);  << failed code
         return;
       }
       String errString = "새 신을 신 고 뛰어보자 퐐쫙";

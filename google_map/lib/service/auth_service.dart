@@ -19,7 +19,6 @@ class AuthService extends GetxService {
   static AuthService get to => Get.find();
 
   final _firebaseAuth = FirebaseAuth.instance;
-  bool isUserLogin = false;
 
   // Future<void> signInWithEmailAndPassword({required String email, required String password}) async {
   //   await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
@@ -29,14 +28,11 @@ class AuthService extends GetxService {
     try {
       final credential = await _firebaseAuth.signInWithEmailAndPassword(email: email, password: password);
       if (credential.user == null) {
-        isUserLogin = false;
         return LoginStatus.unexpected;
       } else {
-        isUserLogin = true;
         return LoginStatus.succes;
       }
     } on FirebaseAuthException catch (error) {
-      isUserLogin = false;
       final errCode = error.code;
       switch (errCode) {
         case "invalid-email":
@@ -80,5 +76,9 @@ class AuthService extends GetxService {
 
   User? getCurrentUser() {
     return _firebaseAuth.currentUser;
+  }
+
+  String? getEmail() {
+    return _firebaseAuth.currentUser?.email;
   }
 }

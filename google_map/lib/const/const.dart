@@ -1,8 +1,14 @@
 const COLLECTION_STORYPLAYLIST_depracated = 'storyPlayList';
-const COLLECTION_STORYLIST = 'storyList';
+
 const COLLECTION_USERS = 'users';
+const COLLECTION_STORYLIST = 'storyList';
+const COLLECTION_PRIVATE = 'private';
 
 const KEY_UID = 'uid';
+
+const KEY_GROUP = 'group';
+const VALUE_BASIC = 'basic';
+const KEY_NICKNAME = 'nickname';
 
 const KEY_ADDRESS_DETAIL = 'address_detail';
 const KEY_ADDRESS_SEARCH = 'address_search';

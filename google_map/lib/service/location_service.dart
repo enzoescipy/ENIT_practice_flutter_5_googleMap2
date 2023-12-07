@@ -11,14 +11,11 @@ class LocationService extends GetxService{
   RxList<StoryListModel> storyList = <StoryListModel>[].obs;
 
 
-  @override
-  void onInit() async{
+  Future<void> getStoryList() async {
     ///데이터 리스트에 넣어주기
     await storyListNetworkRepository.getStoryListModel().then((value) => {
       storyList(value)
     });
-
-    super.onInit();
   }
 
 }

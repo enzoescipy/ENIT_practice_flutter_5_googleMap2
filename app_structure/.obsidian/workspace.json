@@ -26,11 +26,14 @@
             "id": "5acf0f203ef3531d",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "pages/Login.md",
-                "mode": "source",
-                "source": false
+                "file": "page_tree.canvas",
+                "viewState": {
+                  "x": -183.76542457665096,
+                  "y": 131.82278416435022,
+                  "zoom": -0.32581080235162585
+                }
               }
             }
           }
@@ -101,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages/Login.md",
+                "file": "pages/My.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -118,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pages/Login.md",
+                "file": "pages/My.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -141,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pages/Login.md"
+                "file": "pages/My.md"
               }
             }
           }
@@ -164,6 +167,7 @@
   },
   "active": "5acf0f203ef3531d",
   "lastOpenFiles": [
+    "pages/Home.md",
     "page_tree.canvas",
     "pages/Login.md",
     "pics/Pasted image 20231205111628.png",
@@ -182,7 +186,6 @@
     "pages/Preview.md",
     "pics/Pasted image 20231205112302.png",
     "pics/Pasted image 20231205112035.png",
-    "pages/Home.md",
     "pics",
     "pages",
     "pics/Pasted image 20231205110607.png",
