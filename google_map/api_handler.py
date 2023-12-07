@@ -1,7 +1,7 @@
 import sys
 import os
 
-INJECT_API_KEY = "AIzaSyDaL72i3Yrg3mXqXbO_wD-lWPCH8DFfcE8"
+INJECT_API_KEY = "AIzaSyBxQtEky-iIky5G7uajz5Q9fx1f1mBIhl8"
 DETECT_TARGET_PATTERN = "google_api_public_key_inject_flutter_android_manifest_xml"
 TARGET_FILE_LOCATION = "./android/app/src/main/AndroidManifest.xml"
 
