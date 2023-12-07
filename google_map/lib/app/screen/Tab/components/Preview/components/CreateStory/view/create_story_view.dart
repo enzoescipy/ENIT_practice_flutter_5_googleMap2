@@ -149,7 +149,6 @@ class CreateStoryView extends GetView<CreateStoryController> {
       child: IconButton(
         icon: Icon(Icons.send),
         onPressed: (() async {
-          controller.isCreated = true;
           await controller.fireBaseCreate();
           Get.back();
         }),

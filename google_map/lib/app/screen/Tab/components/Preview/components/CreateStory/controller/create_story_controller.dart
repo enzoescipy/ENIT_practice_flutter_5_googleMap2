@@ -21,15 +21,9 @@ class CreateStoryController extends GetxController {
     KEY_SCRIPT: TextEditingController(),
   };
 
-  bool isCreated = false;
 
   Future<void> fireBaseCreate() async {
     EasyLoading.show();
-
-    if (isCreated == false) {
-      EasyLoading.dismiss();
-      return;
-    }
 
     int emptyCount = 0;
 
@@ -42,7 +36,7 @@ class CreateStoryController extends GetxController {
 
     debugConsole(storyListMap);
 
-    if (emptyCount == 0 && isCreated) {
+    if (emptyCount == 0) {
       final model = StoryListModel.fromMap(storyListMap);
       model.addressDetail = model.addressSearch;
       model.circleColor = true;

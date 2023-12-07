@@ -64,7 +64,7 @@ class LoginView extends GetView<LoginController> {
             )),
         Expanded(
             child: TextField(
-                // controller: controller.textFieldControllers[KEY_TITLE]
+                controller: controller.idTextControl
                 ))
       ],
     );
@@ -82,7 +82,7 @@ class LoginView extends GetView<LoginController> {
             )),
         Expanded(
             child: TextField(
-                // controller: controller.textFieldControllers[KEY_TITLE]
+                controller: controller.pwTextControl
                 ))
       ],
     );
@@ -93,7 +93,7 @@ class LoginView extends GetView<LoginController> {
       padding: EdgeInsets.only(left: 75, right: 75, top: 15, bottom: 5),
       child: OutlinedButton(
         child: const Text("로그인"),
-        onPressed: () {},
+        onPressed: controller.FireAuthLogin,
       ),
     );
   }
