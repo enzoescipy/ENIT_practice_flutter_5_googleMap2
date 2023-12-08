@@ -1,17 +1,26 @@
 import 'dart:ffi';
 
+import 'package:enitproject/model/user_preference_model.dart';
 import 'package:enitproject/package/debug_console.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 enum LoginStatus {
-  succes,
+  success,
   invalidEmail, // id field is not the email format
   userDisabled,
   userNotFound, // pw or email is wrong
   unexpected, // err code not given but login failed
   other, // not handled err code
+}
+
+enum JoinStatus {
+  success,
+  nullParam,
+  alreadyExistsEmail,
+  weakPassword,
+  other,
 }
 
 class AuthService extends GetxService {
@@ -20,9 +29,25 @@ class AuthService extends GetxService {
 
   final _firebaseAuth = FirebaseAuth.instance;
 
-  // Future<void> signInWithEmailAndPassword({required String email, required String password}) async {
-  //   await _firebaseAuth.createUserWithEmailAndPassword(email: email, password: password);
-  // }
+  Future<JoinStatus> joinWithEmailAndPassword(UserPrefModel userPrefModel, {required String passwordRepeat}) async {
+    if (userPrefModel.email == null || userPrefModel.password == null) {
+      return JoinStatus.nullParam;
+    }
+    try {
+      await _firebaseAuth.createUserWithEmailAndPassword(email: userPrefModel.email!, password: userPrefModel.password!);
+    } on FirebaseAuthException catch (error) {
+      switch (error.code) {
+        case 'weak-password':
+          return JoinStatus.weakPassword;
+        case 'email-already-in-use':
+          return JoinStatus.alreadyExistsEmail;
+        default:
+          return JoinStatus.other;
+      }
+    }
+
+    return JoinStatus.success;
+  }
 
   Future<LoginStatus> logInWithEmailAndPassword({required String email, required String password}) async {
     try {
@@ -30,11 +55,10 @@ class AuthService extends GetxService {
       if (credential.user == null) {
         return LoginStatus.unexpected;
       } else {
-        return LoginStatus.succes;
+        return LoginStatus.success;
       }
     } on FirebaseAuthException catch (error) {
-      final errCode = error.code;
-      switch (errCode) {
+      switch (error.code) {
         case "invalid-email":
           return LoginStatus.invalidEmail;
         case "user-disabled":
@@ -44,7 +68,6 @@ class AuthService extends GetxService {
         case "wrong-password":
           return LoginStatus.userNotFound;
         default:
-          debugConsole(errCode);
           return LoginStatus.other;
       }
     }

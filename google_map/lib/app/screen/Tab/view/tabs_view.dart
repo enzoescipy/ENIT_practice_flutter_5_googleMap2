@@ -40,14 +40,14 @@ class TabsView extends GetView<TabsController> {
                 },
                 items: const [
                   BottomNavigationBarItem(
-                    icon: Icon(Icons.home),
-                    label: 'HOME',),
+                    icon: Icon(Icons.map),
+                    label: '지도 보기',),
                   BottomNavigationBarItem(
                       icon: Icon(Icons.list),
                       label: '위치 목록'),
-                  // BottomNavigationBarItem(
-                  //     icon: Icon(Icons.add),
-                  //     label: '추가하기'),
+                  BottomNavigationBarItem(
+                      icon: Icon(Icons.face),
+                      label: '내 정보'),
                 ],
               ),
             ),

@@ -4,22 +4,15 @@ import 'package:get/get.dart';
 import 'package:enitproject/service/auth_service.dart';
 import 'package:enitproject/app/routes/app_pages.dart';
 
-class LoginController extends GetxController {
-  static LoginController get to => Get.find();
+class MypageController extends GetxController {
+  static MypageController get to => Get.find();
 
   final idTextControl = TextEditingController();
   final pwTextControl = TextEditingController();
 
   @override
   void onInit() {
-    if (AuthService.to.getCurrentUser() != null) {
-      Get.rootDelegate.offAndToNamed(Routes.HOME);
-    }
-    // AuthService.to.logOut(); //debug
-    // storyListNetworkRepository.getUserPreference(); // debug
-    // storyListNetworkRepository.updateUserPreference("아직모른다"); // debug
-    // storyListNetworkRepository.createUser(UserPrefModel(null, null, "testNickNAme일지도")); // debug
-    super.onInit();
+
   }
 
   Future<void> fireAuthLogin() async {

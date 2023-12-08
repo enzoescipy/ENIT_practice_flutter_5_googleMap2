@@ -12,7 +12,7 @@
 		{"id":"722d8b97b4a5e9af","type":"file","file":"pages/Delete.md","x":-200,"y":1360,"width":200,"height":200,"color":"4"},
 		{"id":"7e4d6471fdf42418","type":"file","file":"pages/Create.md","x":-400,"y":1360,"width":200,"height":200,"color":"4"},
 		{"id":"5933d8eb3d9dc295","type":"file","file":"pages/Update.md","x":0,"y":1360,"width":200,"height":200,"color":"4"},
-		{"id":"19b5cb33f1436f52","type":"file","file":"pages/Join.md","x":-670,"y":-440,"width":400,"height":400,"color":"1"}
+		{"id":"19b5cb33f1436f52","type":"file","file":"pages/Join.md","x":-670,"y":-440,"width":400,"height":400,"color":"3"}
 	],
 	"edges":[
 		{"id":"c9ec1b883c2bf544","fromNode":"b03f7534392cfcb1","fromSide":"right","toNode":"48ae35711e1eb215","toSide":"left","label":"NO"},

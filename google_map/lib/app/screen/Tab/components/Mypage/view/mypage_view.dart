@@ -1,47 +1,48 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:enitproject/app/screen/Login/controller/login_controller.dart';
-import 'package:enitproject/app/routes/app_pages.dart';
 
 import 'package:enitproject/app/screen/Join/view/join_view.dart';
 import 'package:enitproject/app/screen/Join/binding/join_binding.dart';
 
-class LoginView extends GetView<LoginController> {
-  const LoginView({Key? key}) : super(key: key);
+class MypageView extends GetView<LoginController> {
+  const MypageView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-        child: Scaffold(
-            backgroundColor: Colors.white,
-            appBar: AppBar(
-              backgroundColor: Colors.white,
-              elevation: 0.0,
-              centerTitle: true,
-              title: const Text(
-                '로그인',
-                style: TextStyle(color: Colors.black),
-              ),
+    // return Center(
+    //     child: Scaffold(
+    //         backgroundColor: Colors.white,
+    //         appBar: AppBar(
+    //           backgroundColor: Colors.white,
+    //           elevation: 0.0,
+    //           centerTitle: true,
+    //           title: const Text(
+    //             '로그인',
+    //             style: TextStyle(color: Colors.black),
+    //           ),
 
-            ),
-            body: Center(
-              child: Container(
-                child: SizedBox(
-                  width: 300,
-                  child: ListView(
-                    children: [
-                      // TODO : implement the showable widget list.
-                      // for example, like the CreateStory view.
-                      ListViewIdField(),
-                      ListViewPwField(),
-                      ListViewLoginButton(),
-                      ListViewAccountCreateButton(),
-                      ListViewGoogleLoginButton(),
-                    ],
-                  ),
-                ),
-              ),
-            )));
+    //         ),
+    //         body: Center(
+    //           child: Container(
+    //             child: SizedBox(
+    //               width: 300,
+    //               child: ListView(
+    //                 children: [
+    //                   // TODO : implement the showable widget list.
+    //                   // for example, like the CreateStory view.
+    //                   ListViewIdField(),
+    //                   ListViewPwField(),
+    //                   ListViewLoginButton(),
+    //                   ListViewAccountCreateButton(),
+    //                   ListViewGoogleLoginButton(),
+    //                 ],
+    //               ),
+    //             ),
+    //           ),
+    //         )));
+
+    return Text("sample");
   }
 
   Widget ListViewIdField() {

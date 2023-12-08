@@ -30,8 +30,8 @@
               "state": {
                 "file": "page_tree.canvas",
                 "viewState": {
-                  "x": -183.76542457665096,
-                  "y": 131.82278416435022,
+                  "x": 241.3772336222646,
+                  "y": 627.0914331059806,
                   "zoom": -0.32581080235162585
                 }
               }
@@ -104,7 +104,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages/My.md",
+                "file": "page_tree.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -121,7 +121,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "pages/My.md",
+                "file": "page_tree.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,7 +144,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "pages/My.md"
+                "file": "page_tree.canvas"
               }
             }
           }

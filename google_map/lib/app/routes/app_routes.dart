@@ -17,7 +17,7 @@ abstract class Routes {
   static const LOCATIONLIST = _Paths.TAB + _Paths.LOCATIONLIST;
 
   ///생성
-  // static const LOCATIONCREATE = _Paths.TAB + _Paths.LOCATIONLIST + _Paths.CREATE;
+  static const MYPAGE = _Paths.TAB + _Paths.MYPAGE;
 }
 
 abstract class _Paths {
@@ -26,5 +26,5 @@ abstract class _Paths {
   static const TAB = '/tab';
   static const Home = '/home';
   static const LOCATIONLIST = '/locationlist';
-  // static const CREATE = '/create';
+  static const MYPAGE = '/mypage';
 }
