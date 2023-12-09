@@ -52,13 +52,12 @@ class MypageController extends GetxController {
     String snackString = "새 신을 신 고 뛰어보자 퐐쫙";
     String title = "회원탈퇴에 실패하였습니다.";
 
-
     await storyListNetworkRepository.deleteUser();
     final status = await AuthService.to.withDrawUser();
     debugConsole(status);
     if (status == WithDrawStatus.success) {
       title = "회원탈퇴에 성공하였습니다.";
-      snackString = "다음에 뵈요!";
+      snackString = "다음에 천국에서 뵈요!";
       Get.rootDelegate.offAndToNamed(Routes.LOGIN);
     } else if (status == WithDrawStatus.noLoginRecent) {
       snackString = "로그인 기록이 너무 오래 되었습니다. 재로그인을 해야 할 수 있습니다. (데이터는 삭제되었습니다.)";

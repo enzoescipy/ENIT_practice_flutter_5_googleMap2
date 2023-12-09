@@ -109,7 +109,15 @@ class MypageView extends GetView<MypageController> {
       child: ElevatedButton(
         child: const Text("회원 탈퇴", style: TextStyle(color: Colors.white),),
         style: ElevatedButton.styleFrom(backgroundColor: Colors.red[300]),
-        onPressed: controller.withDraw
+        onPressed: () {
+          Get.defaultDialog(
+            title: "경고",
+            content: Text("회원 탈퇴 시, 10년 내 사망 확률이 유의미하게 증가할 수 있습니다. 정말 탈퇴하시겠습니까?"),
+            onCancel: () {},
+            onConfirm: controller.withDraw
+          );
+        }
+        
       ),
     );
   }

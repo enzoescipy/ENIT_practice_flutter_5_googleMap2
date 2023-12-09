@@ -26,14 +26,7 @@ class JoinController extends GetxController {
       }
       return MapEntry(key, value.text);
     });
-    //debug
-    // please delete test2 user in the db first please
-    textFieldMap['email_id'] = 'test2@naver.com';
-    textFieldMap['pw'] = 'test2user';
-    textFieldMap['pw_repeat'] = 'test2user';
-    textFieldMap['nickname'] = 'bestFriends';
-    emptyCount = 0;
-    //debug
+
     debugConsole(textFieldMap);
 
     if (emptyCount != 0) {
