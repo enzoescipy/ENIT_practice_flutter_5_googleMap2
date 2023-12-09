@@ -6,6 +6,8 @@ import 'package:fluttertoast/fluttertoast.dart';
 import '../const/const.dart';
 import 'package:enitproject/model/user_preference_model.dart';
 
+enum GetUserPreferenceStatus { success, noUserOnDB, duplicateUserOnDB, invalid }
+
 class StoryListNetworkRepository {
   int keyAutoIncrease = 0;
 
@@ -82,34 +84,32 @@ class StoryListNetworkRepository {
     }
   }
 
-  Future<UserPrefModel?> getUserPreference() async {
+  
+  Future<(UserPrefModel?, GetUserPreferenceStatus)> getUserPreference() async {
     final currentUser = AuthService.to.getCurrentUser();
     if (currentUser == null) {
-      return Future.value(null);
+      return (null, GetUserPreferenceStatus.invalid);
     }
 
     // get the non-login-required values from private collection
     final uid = currentUser.uid;
-    final nickname =
-        await FirebaseFirestore.instance.collection(COLLECTION_USERS).where('uid', isEqualTo: uid).get().then((snapshot) {
-      if (snapshot.docs.isEmpty) {
-        throw Exception("회원가입은 되었으나, 해당 유저의 UID가 기록된 DB 열이 존재하지 않습니다.");
-      } else if (snapshot.docs.length > 1) {
-        throw Exception("중복된 UID가 기록된 DB 열이 존재합니다.");
-      } else {
-        return snapshot.docs[0].reference.collection(COLLECTION_PRIVATE);
-      }
-    }).then((collectionReference) {
-      return collectionReference.where(KEY_GROUP, isEqualTo: VALUE_BASIC).get().then((snapshot) {
+    final usersQuery = await FirebaseFirestore.instance.collection(COLLECTION_USERS).where('uid', isEqualTo: uid).get();
+
+    if (usersQuery.docs.isEmpty) {
+      return (null, GetUserPreferenceStatus.noUserOnDB);
+    } else if (usersQuery.docs.length > 1) {
+      return (null, GetUserPreferenceStatus.duplicateUserOnDB);
+    } 
+    final targetUserPrivateCollection = usersQuery.docs[0].reference.collection(COLLECTION_PRIVATE);
+
+    final String nickname = await targetUserPrivateCollection.where(KEY_GROUP, isEqualTo: VALUE_BASIC).get().then((snapshot) {
         return snapshot.docs[0].data()[KEY_NICKNAME];
       });
-    });
 
     // get the login-required values from AuthService
     final email = AuthService.to.getEmail();
 
-    debugConsole([email, nickname]);
-    return UserPrefModel(email, null, nickname);
+    return (UserPrefModel(email, null, nickname), GetUserPreferenceStatus.success);
   }
 
   Future<void> updateUserPreference(String nickname) async {

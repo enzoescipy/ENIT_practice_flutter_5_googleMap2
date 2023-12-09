@@ -2,6 +2,7 @@ import 'dart:ffi';
 
 import 'package:enitproject/model/user_preference_model.dart';
 import 'package:enitproject/package/debug_console.dart';
+import 'package:enitproject/repository/storylist_network_repository.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -119,6 +120,12 @@ class AuthService extends GetxService {
 
     final userCredential = await _firebaseAuth.signInWithCredential(googleCredential);
     await googleSignIn.disconnect();
+
+    final (model, status) = await storyListNetworkRepository.getUserPreference();
+    if (status == GetUserPreferenceStatus.noUserOnDB) {
+      storyListNetworkRepository.createUser(UserPrefModel(null, null, "새로운 여행자"));
+    }
+
     return userCredential;
   }
 

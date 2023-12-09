@@ -16,7 +16,7 @@ class LoginController extends GetxController {
   void onInit() {
     if (AuthService.to.getCurrentUser() != null) {
       storyListNetworkRepository.getUserPreference().then((userModel) {
-        UserService.to.save(userModel?.nickname ?? "");
+        UserService.to.save(userModel.$1?.nickname ?? "");
         Get.rootDelegate.offAndToNamed(Routes.HOME);
       });
     }
@@ -34,7 +34,7 @@ class LoginController extends GetxController {
       return;
     } else {
       EasyLoading.dismiss();
-      await storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel?.nickname ?? ""));
+      await storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel.$1?.nickname ?? ""));
       Get.rootDelegate.offAndToNamed(Routes.HOME);
     }
   }
@@ -50,7 +50,7 @@ class LoginController extends GetxController {
     final loginStatus = await AuthService.to.logInWithEmailAndPassword(email: idTextControl.text, password: pwTextControl.text);
     if (loginStatus == LoginStatus.success) {
       EasyLoading.dismiss();
-      await storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel?.nickname ?? ""));
+      await storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel.$1?.nickname ?? ""));
       Get.rootDelegate.offAndToNamed(Routes.HOME);
       return;
     }

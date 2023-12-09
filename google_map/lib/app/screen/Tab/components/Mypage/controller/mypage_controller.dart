@@ -17,7 +17,7 @@ class MypageController extends GetxController {
 
   @override
   void onInit() async {
-    var userPreference = await storyListNetworkRepository.getUserPreference();
+    var (userPreference, status) = await storyListNetworkRepository.getUserPreference();
     if (userPreference == null) {
       userPreference = UserPrefModel("유저 정보를 로드할 수 없습니다.", "유저 정보를 로드할 수 없습니다.", "유저 정보를 로드할 수 없습니다.");
     }

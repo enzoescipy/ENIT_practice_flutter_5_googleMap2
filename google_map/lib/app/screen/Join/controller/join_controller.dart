@@ -67,7 +67,7 @@ class JoinController extends GetxController {
     if (status == JoinStatus.success) {
       await storyListNetworkRepository.createUser(userModel);
       Get.back();
-      storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel?.nickname ?? ""));
+      storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel.$1?.nickname ?? ""));
       Get.rootDelegate.offAndToNamed(Routes.HOME);
       Get.showSnackbar(getSnackBar);
     } else {
