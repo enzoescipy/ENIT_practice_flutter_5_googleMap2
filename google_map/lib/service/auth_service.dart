@@ -20,6 +20,13 @@ enum JoinStatus {
   nullParam,
   alreadyExistsEmail,
   weakPassword,
+  passwordRepeatWrong,
+  other,
+}
+
+enum WithDrawStatus {
+  success,
+  noLoginRecent,
   other,
 }
 
@@ -33,7 +40,11 @@ class AuthService extends GetxService {
     if (userPrefModel.email == null || userPrefModel.password == null) {
       return JoinStatus.nullParam;
     }
+    if (passwordRepeat != userPrefModel.password) {
+      return JoinStatus.passwordRepeatWrong;
+    }
     try {
+      debugConsole([userPrefModel.email, userPrefModel.password]);
       await _firebaseAuth.createUserWithEmailAndPassword(email: userPrefModel.email!, password: userPrefModel.password!);
     } on FirebaseAuthException catch (error) {
       switch (error.code) {
@@ -47,6 +58,24 @@ class AuthService extends GetxService {
     }
 
     return JoinStatus.success;
+  }
+
+  Future<WithDrawStatus> withDrawUser() async {
+    if (_firebaseAuth.currentUser == null) {
+      return WithDrawStatus.noLoginRecent;
+    }
+
+    try {
+      await _firebaseAuth.currentUser?.delete();
+      return WithDrawStatus.success;
+    } on FirebaseAuthException catch (error) {
+      switch (error.code) {
+        case ('requires-recent-login'):
+          return WithDrawStatus.noLoginRecent;
+        default:
+          return WithDrawStatus.other;
+      }
+    }
   }
 
   Future<LoginStatus> logInWithEmailAndPassword({required String email, required String password}) async {
@@ -73,8 +102,7 @@ class AuthService extends GetxService {
     }
   }
 
-  /// null if login by google has been failed or google login-ed user not found in
-  /// our user list.
+  /// null if login by google has been failed or google login-ed user not found in our user list.
   Future<UserCredential?> logInWithGoogle() async {
     final googleSignIn = GoogleSignIn();
     final account = await googleSignIn.signIn();
@@ -89,7 +117,8 @@ class AuthService extends GetxService {
       accessToken: authentication.accessToken,
     );
 
-    final userCredential = _firebaseAuth.signInWithCredential(googleCredential);
+    final userCredential = await _firebaseAuth.signInWithCredential(googleCredential);
+    await googleSignIn.disconnect();
     return userCredential;
   }
 

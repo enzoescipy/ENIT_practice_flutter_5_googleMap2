@@ -1,6 +1,7 @@
 import 'package:enitproject/app/screen/Tab/components/Preview/controller/preview_controller.dart';
 import 'package:enitproject/service/location_service.dart';
 import 'package:enitproject/const/color.dart';
+import 'package:enitproject/service/user_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,6 @@ import 'package:enitproject/app/screen/Tab/components/Preview/components/UpdateS
 
 class PreviewScreen extends GetView<PreviewController> {
   const PreviewScreen({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,9 +22,9 @@ class PreviewScreen extends GetView<PreviewController> {
         backgroundColor: Colors.white,
         elevation: 0.0,
         centerTitle: true,
-        title: const Text(
-          '둘러보기',
-          style: TextStyle(color: Colors.black),
+        title: Text(
+          '${UserService.to.nickname} 님의 마커 목록',
+          style: const TextStyle(color: Colors.black),
         ),
         actions: [
           /// 현재위치로 화면 이동

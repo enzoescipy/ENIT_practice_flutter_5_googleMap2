@@ -1,15 +1,14 @@
 import 'package:enitproject/app/routes/app_pages.dart';
 import 'package:enitproject/service/location_service.dart';
-import 'package:enitproject/const/const.dart';
 import 'package:enitproject/service/splash_service.dart';
 import 'package:enitproject/service/auth_service.dart';
+import 'package:enitproject/service/user_service.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:enitproject/firebase_options.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 import 'package:enitproject/package/debug_console.dart';
@@ -27,6 +26,7 @@ Future<void> main() async {
           Get.put(SplashService());
           Get.put(LocationService());
           Get.put(AuthService());
+          Get.put(UserService());
         },
       ),
       builder: EasyLoading.init(),

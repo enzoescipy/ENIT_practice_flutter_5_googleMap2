@@ -33,7 +33,7 @@ class StoryListNetworkRepository {
   Future<void> createUser(UserPrefModel userModel) async {
     final currentUser = AuthService.to.getCurrentUser();
     if (currentUser == null) {
-      return Future.value(null);
+      return;
     }
 
     final userCollectionReference = FirebaseFirestore.instance.collection(COLLECTION_USERS);
@@ -47,6 +47,39 @@ class StoryListNetworkRepository {
         KEY_GROUP: VALUE_BASIC,
       });
     });
+  }
+
+  Future<void> deleteUser() async {
+    final currentUser = AuthService.to.getCurrentUser();
+    if (currentUser == null) {
+      return;
+    }
+
+    final uid = currentUser.uid;
+    final snapshot = await FirebaseFirestore.instance.collection(COLLECTION_USERS).where('uid', isEqualTo: uid).get();
+
+    if (snapshot.docs.isEmpty) {
+      throw Exception("회원가입은 되었으나, 해당 유저의 UID가 기록된 DB 열이 존재하지 않습니다.");
+    } else if (snapshot.docs.length > 1) {
+      throw Exception("중복된 UID가 기록된 DB 열이 존재합니다.");
+    } else {
+      final reference = snapshot.docs[0].reference;
+      await reference.collection(COLLECTION_PRIVATE).get().then((snapshot) {
+        final List<Future> deleteActions = [];
+        snapshot.docs.forEach((doc) {
+          deleteActions.add(doc.reference.delete());
+        });
+        return Future.wait(deleteActions);
+      });
+      await reference.collection(COLLECTION_STORYLIST).get().then((snapshot) {
+        final List<Future> deleteActions = [];
+        snapshot.docs.forEach((doc) {
+          deleteActions.add(doc.reference.delete());
+        });
+        return Future.wait(deleteActions);
+      });
+      return await snapshot.docs[0].reference.delete();
+    }
   }
 
   Future<UserPrefModel?> getUserPreference() async {

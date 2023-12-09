@@ -1,3 +1,4 @@
+import 'package:enitproject/service/auth_service.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:enitproject/app/screen/Login/controller/login_controller.dart';
@@ -22,7 +23,6 @@ class LoginView extends GetView<LoginController> {
                 '로그인',
                 style: TextStyle(color: Colors.black),
               ),
-
             ),
             body: Center(
               child: Container(
@@ -111,7 +111,7 @@ class LoginView extends GetView<LoginController> {
             ),
           ),
         ),
-        onPressed: () {},
+        onPressed: controller.googleAuthLogin,
         child: Padding(
           padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
           child: Row(
@@ -125,7 +125,7 @@ class LoginView extends GetView<LoginController> {
               Padding(
                 padding: const EdgeInsets.only(left: 10),
                 child: Text(
-                  'Sign in with Google',
+                  'Log in with Google',
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.black54,

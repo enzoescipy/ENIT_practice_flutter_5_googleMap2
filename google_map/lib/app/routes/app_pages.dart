@@ -56,15 +56,15 @@ class AppPages {
               title: 'Storylist',
               binding: PreviewBinding(),
             ),
+            GetPage(
+              preventDuplicates: true,
+              name: _Paths.MYPAGE,
+              page: () => const MypageView(),
+              title: 'Mypage',
+              binding: MypageBinding(),
+            )
           ],
         ),
-        GetPage(
-          preventDuplicates: true,
-          name: _Paths.MYPAGE,
-          page: () => const MypageView(),
-          title: 'Mypage',
-          binding: MypageBinding(),
-        )
       ],
     ),
   ];

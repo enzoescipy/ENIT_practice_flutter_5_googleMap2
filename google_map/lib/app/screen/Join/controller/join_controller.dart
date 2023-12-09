@@ -1,10 +1,10 @@
 import 'package:enitproject/model/user_preference_model.dart';
 import 'package:enitproject/package/debug_console.dart';
 import 'package:enitproject/repository/storylist_network_repository.dart';
+import 'package:enitproject/service/user_service.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
-import 'package:get/get.dart';
 import 'package:enitproject/service/auth_service.dart';
 import 'package:enitproject/app/routes/app_pages.dart';
 
@@ -58,6 +58,9 @@ class JoinController extends GetxController {
       case JoinStatus.alreadyExistsEmail:
         snackString = "중복되는 이메일입니다.";
         break;
+      case JoinStatus.passwordRepeatWrong:
+        snackString = "비밀번호 재입력 란이 잘못되었습니다.";
+        break;
       default:
         snackString = "예상치 못한 동작입니다. 겪으신 문제점을 관리자에게 문의 드리면 감사하겠습니다.";
     }
@@ -71,6 +74,7 @@ class JoinController extends GetxController {
     if (status == JoinStatus.success) {
       await storyListNetworkRepository.createUser(userModel);
       Get.back();
+      storyListNetworkRepository.getUserPreference().then((userModel) => UserService.to.save(userModel?.nickname ?? ""));
       Get.rootDelegate.offAndToNamed(Routes.HOME);
       Get.showSnackbar(getSnackBar);
     } else {
